@@ -21,7 +21,6 @@ body {
     height: auto;
     position: relative;
     cursor: pointer;
-    user-select: none;
 }
 
 #letter {
@@ -31,6 +30,7 @@ body {
     display: inline-block;
     font-size: 500px;
     color: aliceblue;
+    user-select: none;
     text-shadow:
 		-1px -1px 0 #000,
 		1px -1px 0 #000,
@@ -59,7 +59,14 @@ body {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    user-select: none;
+}
+
+#letter-container,
+#letter-container *,
+#letter-container *::before,
+#letter-container *::after {
+    user-select: none !important;
+    -webkit-tap-highlight-color: transparent !important;
 }
 
 @media (max-width: 768px) {
