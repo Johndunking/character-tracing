@@ -43,18 +43,6 @@ function nextCharacter() {
     }
 }
 
-letterContainer.addEventListener('mouseenter', () => {
-    trace.style.opacity = 1;
-});
-
-letterContainer.addEventListener('mouseleave', () => {
-    trace.style.opacity = 0;
-    if (isPointerPressed) {
-        isPointerPressed = false;
-        nextCharacter();
-    }
-});
-
 letterContainer.addEventListener('mousedown', () => {
     isPointerPressed = true;
 });
@@ -69,6 +57,7 @@ document.addEventListener('mousemove', (e) => {
         handleMove(e.clientX, e.clientY);
     }
 });
+
 
 // Touch events
 letterContainer.addEventListener('touchstart', (e) => {
@@ -97,8 +86,13 @@ function handleMove(x, y) {
     dot.style.top = `${y - traceRect.top}px`;
 }
 
+
+
+
 // Initial setup
 // Choose the character type: 'uppercase', 'lowercase', or 'numbers'
 updateCharacter();
 speakCharacter(); // Speak the first character initially
-console.log('Character Type:', characterType);
+
+
+
